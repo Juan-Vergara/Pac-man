@@ -22,6 +22,7 @@ boolean dying=false;
 float deathAnim=0;
 
 boolean gameOver=false;
+boolean youWin = false;
 
 float PAC_SPEED=2.4;
 float GHOST_SPEED=1.7;
@@ -46,12 +47,20 @@ ghosts.clear();
 score=0;
 lives=3;
 gameOver=false;
+youWin = false;
 
 loadMap();
 
 ready=true;
 readyTimer=120;
 
+}
+
+void checkWin(){
+  if(pellets.isEmpty() && powerPellets.isEmpty()){
+    youWin = true;
+    gameOver = true;
+  }
 }
 
 void draw(){
@@ -66,7 +75,12 @@ drawPellets();
 fill(255,0,0);
 textAlign(CENTER);
 textSize(50);
-text("GAME OVER",width/2,height/2);
+if(youWin){
+  fill(255, 255, 0);  
+  text("LEVEL COMPLETED!", width/2, height/2);
+} else {    
+  text("GAME OVER", width/2, height/2);
+}
 
 fill(255);
 textSize(20);
@@ -98,6 +112,7 @@ return;
 if(!dying){
 
 pacman.update();
+checkWin(); 
 
 for(Ghost g:ghosts){
 g.update();
