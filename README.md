@@ -1,5 +1,5 @@
-Juego Clásico de Pac-Man en Processing, Integrantes /n
-- Esteban Prieto Lugo /n
-- Bryant Antony Rosero Rojas /n
-- Juan Luis Vergara /n
+Juego Clásico de Pac-Man en Processing, Integrantes 
+- Esteban Prieto Lugo 
+- Bryant Antony Rosero Rojas 
+- Juan Luis Vergara 
 Procedimiento: Solo se requiere descargar el archivo Pacman_pde.pde y correrlo en Processing.
